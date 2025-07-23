@@ -29,6 +29,10 @@ body {
     text-align: center;
 }
 
+.container>h1 {
+    color: white;
+}
+
 .input-group {
     display: flex;
     flex-direction: column;

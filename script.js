@@ -67,3 +67,19 @@ taskInput.addEventListener('keydown', (e) => {
 });
 
 renderTasks();
+
+function updateClock() {
+  const now = new Date();
+  const utc = now.getTime() + now.getTimezoneOffset() * 60000; 
+  const brasiliaTime = new Date(utc - 3 * 3600000);
+
+  const h = String(brasiliaTime.getHours()).padStart(2, '0');
+  const m = String(brasiliaTime.getMinutes()).padStart(2, '0');
+  const s = String(brasiliaTime.getSeconds()).padStart(2, '0');
+
+  document.getElementById('clock').textContent = `Horário de Brasília: ${h}:${m}:${s}`;
+}
+
+setInterval(updateClock, 1000);
+
+updateClock();
